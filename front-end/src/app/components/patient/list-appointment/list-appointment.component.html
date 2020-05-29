@@ -1,0 +1,34 @@
+<application-header></application-header>
+
+<div class="container">
+    <h2 class="pt-3 pb-3">My Appointment</h2>
+
+    <div class="card">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <th>Date</th>
+                    <th>Doctor Id</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let appointment of appointments">
+                        <td>{{appointment.date | date}}</td>
+                        <td>{{appointment?.doctorId}}</td>
+                        <td>{{appointment?.status}}</td>
+                        <td>
+                            <div class="actions">
+                                <a href="javascript:void(0)" (click)="cancelAppointment(appointment._id)"><i
+                                        class="fa fa-close" style="font-size:24px;color:red"></i></a>
+                                <a href="javascript:void(0)">
+                                    <i class="fa fa-check-circle ml-2" style="font-size:24px; color: green"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

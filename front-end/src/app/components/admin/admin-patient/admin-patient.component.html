@@ -1,0 +1,41 @@
+<application-header></application-header>
+
+<div class="row">
+    <div class="col-12 col-sm-12 col-md-9 com-lg-9 mx-auto">
+        <h2 class="pt-3 pb-3">List Patients</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 col-sm-12 col-md-9 com-lg-9 mx-auto">
+        <div class="card">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Email</th>
+                            <th>Mobile Number</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let patient of patients">
+                            <td>{{patient.firstName}}</td>
+                            <td>{{patient.lastName}}</td>
+                            <td>{{patient.email}}</td>
+                            <td>{{patient.mobileNumber}}</td>
+                            <td>{{patient.status | titlecase}}</td>
+                            <td>
+                                <a href="javascript:void(0)" (click)="deletePatient(patient._id)"><i
+                                        class="fa fa-trash-o" style="font-size:24px;color:red"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

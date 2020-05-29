@@ -1,0 +1,64 @@
+<application-header></application-header>
+
+<div class="container">
+
+    <h2 class="pt-3 pb-3">Book Appointment</h2>
+
+
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4" *ngFor=" let doctor of doctors">
+            <div class="card">
+                <img class="card-img-top" src="../../../../assets/img/doctor-profile.jpg" alt="Card image"
+                    style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">{{doctor?.firstName}} {{doctor?.lastName}}</h4>
+                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                    <div>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#doctorProfile"
+                            (click)="viewProfile(doctor._id)"> View
+                            Profile</button>
+                        <span class="float-right">
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#bookAppointment"
+                                (click)="getDoctorDetails(doctor)"> Book
+                                Appt.</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- The User Profile Modal -->
+<div class="modal" id="doctorProfile">
+    <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Doctor Profile Details</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <profile></profile>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- The User Profile Modal -->
+<div class="modal" id="bookAppointment">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Book Appointment</h4>
+                <button type="button" id="closeAppointmentModalBtn" #closeAppointmentModalBtn class="close"
+                    data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <book-appointment [doctorDetails]="doctorDetails" (onAppointmentBook)="closeAppointmentModal($event)">
+                </book-appointment>
+            </div>
+        </div>
+    </div>
+</div>

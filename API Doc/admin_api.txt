@@ -1,0 +1,5 @@
+1. userProfile
+localhost:3000/admin/userProfile/5d64c5f51c9d4400009e2324
+
+2. getAppointment
+http://localhost:3000/doctor/getAppointment/5d663c527cc4c13e58ec794b

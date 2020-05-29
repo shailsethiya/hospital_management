@@ -1,0 +1,94 @@
+<div class="login-page">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Hospital Management</h3>
+                </div>
+                <div class="card-body">
+                    <form class="m-4" [formGroup]="registrationForm">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" class="form-control" name="firstName" formControlName="firstName">
+                            <div class="text-danger"
+                                *ngIf="registrationForm.controls.firstName.invalid && (registrationForm.controls.firstName.dirty || registrationForm.controls.firstName.touched)">
+                                <div *ngIf="registrationForm.controls.firstName.hasError('required')">
+                                    Firstname is required
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" class="form-control" name="lastName" formControlName="lastName">
+                            <div class="text-danger"
+                                *ngIf="registrationForm.controls.lastName.invalid && (registrationForm.controls.lastName.dirty || registrationForm.controls.lastName.touched)">
+                                <div *ngIf="registrationForm.controls.lastName.hasError('required')">
+                                    Lastname is required
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="text" class="form-control" name="email" formControlName="email">
+                            <div class="text-danger"
+                                *ngIf="registrationForm.controls.email.invalid && (registrationForm.controls.email.dirty || registrationForm.controls.email.touched)">
+                                <div *ngIf="registrationForm.controls.email.hasError('required')">
+                                    Email is required
+                                </div>
+                                <div *ngIf="registrationForm.controls.email.hasError('email')">
+                                    Invalid mail id
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Mobile Number</label>
+                            <input type="text" class="form-control" name="mobileNumber" formControlName="mobileNumber">
+                            <div class="text-danger"
+                                *ngIf="registrationForm.controls.mobileNumber.invalid && (registrationForm.controls.mobileNumber.dirty || registrationForm.controls.mobileNumber.touched)">
+                                <div *ngIf="registrationForm.controls.mobileNumber.hasError('required')">
+                                    Mobile number is required
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="text" class="form-control" name="password" formControlName="password">
+                            <div class="text-danger"
+                                *ngIf="registrationForm.controls.password.invalid && (registrationForm.controls.password.dirty || registrationForm.controls.password.touched)">
+                                <div *ngIf="registrationForm.controls.password.hasError('required')">
+                                    Password is required
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Role</label>
+                            <select class="form-control" name="role" formControlName="role">
+                                <option selected disabled value="null">Select Role</option>
+                                <option value="DOCTOR">Doctor</option>
+                                <option value="PATIENT">Patient</option>
+                            </select>
+                            <div class="text-danger"
+                                *ngIf="registrationForm.controls.role.invalid && (registrationForm.controls.role.dirty || registrationForm.controls.role.touched)">
+                                <div *ngIf="registrationForm.controls.role.hasError('required')">
+                                    Role is required
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <button class="form-control btn btn-outline-primary" (click)="register()">Register</button>
+                        </div>
+
+                        <div routerLink="/login">
+                            <a href="javascript:void(0)">Login</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

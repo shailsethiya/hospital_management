@@ -1,0 +1,56 @@
+<application-header></application-header>
+
+<div class="row">
+    <div class="col-12 col-sm-12 col-md-9 com-lg-9 mx-auto">
+        <h2 class="pt-3 pb-3">List Doctors</h2>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-12 col-sm-12 col-md-9 com-lg-9 mx-auto">
+        <div class="card">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Email</th>
+                            <th>Mobile Number</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let doctor of doctors">
+                            <td>
+                                <div *ngIf="doctor.isVerified == 'Y'"><i class="fa fa-check" style="color: green"></i>
+                                </div>
+                                <div *ngIf="doctor.isVerified == 'N'"><i class="fa fa-close" style="color: red"></i>
+                                </div>
+                            </td>
+                            <td>{{doctor.firstName}}</td>
+                            <td>{{doctor.lastName}}</td>
+                            <td>{{doctor.email}}</td>
+                            <td>{{doctor.mobileNumber}}</td>
+                            <td>{{doctor.status | titlecase}}</td>
+                            <td>
+                                <div class="actions">
+                                    <a href="javascript:void(0)" (click)="deleteDoctor(doctor._id)"><i
+                                            class="fa fa-trash-o" style="font-size:24px;color:red"></i></a>
+                                    <a href="javascript:void(0)" *ngIf="doctor.isVerified == 'N'"
+                                        (click)="verifyDoctor(doctor._id)">
+                                        <i class="fa fa-check-circle ml-2" style="font-size:24px; color: green"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

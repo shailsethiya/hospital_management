@@ -1,0 +1,52 @@
+
+1. updateAppointment
+localhost:3000/patient/updateAppointment
+
+{
+    "status": 200,
+    "appointments": {
+        "_id": "5d6643fe7cc4c13e58ec794c",
+        "doctorId": "5d663c527cc4c13e58ec794b",
+        "date": "Wed Mar 25 2015 05:30:00 GMT+0530",
+        "status": "ACTIVE",
+        "user": {
+            "firstName": "Patient11",
+            "lastName": "Patient",
+            "email": "patient@gmail.com",
+            "mobileNumber": "9665676701",
+            "role": "PATIENT",
+            "isVerified": "Y"
+        },
+        "__v": 0
+    }
+}
+
+2. cancelAppintment
+localhost:3000/patient/cancelAppintment
+ 
+{
+	"_id" : "5d6643fe7cc4c13e58ec794c",
+	"status" : "CANCEL"
+}
+
+3. getAppintment
+	localhost:3000/patient/getAppintment/5d6643fe7cc4c13e58ec794c
+
+4.bookAppintment
+localhost:3000/patient/bookAppintment
+
+{	
+    		   
+            "doctorId": "5d663c527cc4c13e58ec794b",
+            "date": "Wed Mar 25 2015 05:30:00 GMT+0530",
+            "status": "ACTIVE",
+            "user": {
+            	"_id":"5d6643fe7cc4c13e58ec794c",  
+                "firstName": "Patient",
+                "lastName": "Patient",
+                "email": "patient@gmail.com",
+                "mobileNumber": "9665676701",
+                "role": "PATIENT",
+                "isVerified": "Y"
+            }
+        }

@@ -1,0 +1,81 @@
+<application-header></application-header>
+<div class="row">
+    <div class="col-12 col-sm-12 col-md-9 com-lg-9 mx-auto">
+        <div class="pt-3 pb-3">
+            <h2 class="inline-block ">List Appointment</h2>
+            <div class="inline-block float-right">
+                <button class="btn btn-info " (click)="sendDoctorId()"> Visited Patient List</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 col-sm-12 col-md-9 com-lg-9 mx-auto">
+        <div class="card">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Email</th>
+                            <th>Mobile Number</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let appointment of appointments">
+                            <td>{{appointment?.date | date}}</td>
+                            <td>{{appointment?.user.firstName}}</td>
+                            <td>{{appointment?.user.lastName}}</td>
+                            <td>{{appointment?.user.email}}</td>
+                            <td>{{appointment?.user.mobileNumber}}</td>
+                            <td>{{appointment?.status}}</td>
+                            <td>
+                                <div class="actions">
+                                    <a *ngIf="appointment.status == 'PENDING' || appointment.status == 'REJECTED' "
+                                        href="javascript:void(0)" (click)="updateStatus(appointment._id, 'ACCEPTED')">
+                                        <i class="fa fa-check" style="font-size: 18px; color: green"></i>
+                                    </a>
+                                    <a *ngIf="appointment.status == 'PENDING' || appointment.status == 'ACCEPTED' "
+                                        href="javascript:void(0)" (click)="updateStatus(appointment._id, 'REJECTED')">
+                                        <i class="fa fa-close" style="font-size: 18px; color: red"></i>
+                                    </a>
+                                    <a href="javascript:void(0)" data-toggle="modal" data-target="#patientProfile"
+                                        (click)="viewProfile(appointment.user._id)">
+                                        <i class="fa fa-eye"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- The Modal -->
+<div class="modal" id="patientProfile">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Patient Profile</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <profile></profile>
+            </div>
+        </div>
+    </div>
+</div>

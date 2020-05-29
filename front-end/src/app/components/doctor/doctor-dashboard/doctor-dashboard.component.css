@@ -1,0 +1,10 @@
+.actions{
+    display: inline-block;
+}
+
+.modal-dialog {
+    max-width: 750px !important;
+}
+.inline-block{
+    display: inline-block !important;
+}

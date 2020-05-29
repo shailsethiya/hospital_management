@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="javascript:void(0)">Hospital</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse " id="collapsibleNavbar">
+            <ul class="navbar-nav  ">
+                <li class="nav-item pl-5">
+                    <a class="nav-link" href="javascript:void(0)" routerLink="/admin-dashboard">Dashboard</a>
+                </li>
+                <li class="nav-item pl-5">
+                    <a class="nav-link" href="javascript:void(0)" routerLink="/admin-doctor">Doctor</a>
+                </li>
+                <li class="nav-item pl-5">
+                    <a class="nav-link" href="javascript:void(0)" routerLink="/admin-patient">Patient</a>
+                </li>
+            </ul>
+
+            <a class="nav-link dropdown-toggle navbar-float-right" href="javascript:void(0)" id="navbardrop"
+                data-toggle="dropdown">
+                <i class="fa fa-user-circle-o" style="font-size:36px"></i>
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="javascript:void(0)" routerLink="/profile"><i class="fa fa-eye pr-2"
+                        style="font-size:18px"></i> View Profile</a>
+                <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-sign-out pr-2"
+                        style="font-size:18px"></i> Logout</a>
+            </div>
+        </div>
+    </div>
+</nav>

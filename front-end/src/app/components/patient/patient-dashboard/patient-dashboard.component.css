@@ -1,0 +1,7 @@
+.inline-block{
+    display: inline-block;
+}
+
+.modal-dialog-custom {
+    max-width: 750px !important;
+}

@@ -1,0 +1,13 @@
+1.getAppointment
+http://localhost:3000/doctor/getAppointment/5d663c527cc4c13e58ec794b
+
+2. updateStatus
+http://localhost:3000/doctor/updateStatus
+
+{
+	"_id" : "5d68e1a41c9d440000453bef",
+	"status" : "ACCEPTED"
+}
+
+3. visitedPatient
+ localhost:3000/admin/visitedPatient/5d68e1a41c9d440000453bef
